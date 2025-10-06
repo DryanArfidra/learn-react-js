@@ -1,35 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [name, setName] = useState('');
+  const [jurusan, setJurusan] = useState('');
+  const [tahunMasuk, setTahunMasuk] = useState(0);
 
-  return (
+  return(
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div style={{display: "flex", flexDirection: "column", gap: "10px"}}>
+        <div>
+          <label htmlFor="name">Nama</label>
+          <input id="name" type="text" value={name} onChange={(e) => setName(e.target.value)} />
+        </div>
+         <div>
+          <label htmlFor="jurusan">Jurusan</label>
+          <input id="jurusan" type="text"  value={jurusan} onChange={(e) => setJurusan(e.target.value)}/>
+        </div>
+         <div>
+          <label htmlFor="tahunmasuk">Tahun Masuk</label>
+          <input id="tahunmasuk" type="text"  value={tahunMasuk} onChange={(e) => setTahunMasuk(e.target.value)}/>
+        </div>
+        <hr />
+        <div>Nama: {name}</div>
+        <div>Jurusan: {jurusan}</div>
+        <div>Tahun Masuk: {tahunMasuk}</div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
-
-export default App
+export default App;

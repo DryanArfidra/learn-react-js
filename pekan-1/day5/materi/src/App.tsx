@@ -1,8 +1,8 @@
 import './App.css'
-import Counter from './component/count'
-import FromData from './component/FromData'
-import TodoList from './component/ToDoList'
-import UserProfile from './component/UserProfile'
+import Counter from './components/Count'
+import FromData from './components/FromData'
+import TodoList from './components/ToDoList'
+import UserProfile from './components/UserProfile'
 
 function App() {
 
