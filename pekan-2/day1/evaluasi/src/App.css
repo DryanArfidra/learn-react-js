@@ -1,0 +1,158 @@
+/* --- 1. Variabel CSS (Tema) --- */
+/* Menggunakan variabel memudahkan perubahan warna dan gaya secara global */
+:root {
+  --primary-color: #007bff;
+  --primary-hover: #0056b3;
+  --secondary-color: #6c757d;
+  --background-color: #f8f9fa;
+  --card-background: #ffffff;
+  --text-color: #212529;
+  --error-color: #dc3545;
+  --success-color: #155724;
+  --success-bg: #d4edda;
+  --border-color: #ced4da;
+  --border-radius: 8px;
+  --spacing-unit: 20px;
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* --- 2. Gaya Global & Utama --- */
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.App {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+/* --- 3. Container untuk Setiap Tugas --- */
+.task-container {
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-unit);
+  margin-bottom: var(--spacing-unit);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.task-container:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.task-container h2 {
+  margin-top: 0;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 10px;
+  color: var(--primary-color);
+}
+
+/* --- 4. Elemen Form & Input --- */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  box-sizing: border-box; /* Penting agar padding tidak mempengaruhi lebar total */
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+/* --- 5. Tombol --- */
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
+
+/* --- 6. Link --- */
+a {
+  color: var(--primary-color);
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
+/* --- 7. Pesan & Feedback --- */
+.message-text {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #e9ecef;
+  border-left: 4px solid var(--secondary-color);
+  border-radius: 4px;
+  font-style: italic;
+}
+
+.error-text {
+  color: var(--error-color);
+  font-size: 0.875rem;
+  margin-top: 5px;
+}
+
+.success-display {
+  margin-top: var(--spacing-unit);
+  padding: var(--spacing-unit);
+  background-color: var(--success-bg);
+  border: 1px solid #c3e6cb;
+  border-radius: var(--border-radius);
+}
+
+.success-display h3 {
+  margin-top: 0;
+  color: var(--success-color);
+}
+
+/* Styling untuk <pre> agar lebih rapi */
+.success-display pre {
+  background-color: #f8f9fa;
+  padding: 10px;
+  border-radius: 4px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
